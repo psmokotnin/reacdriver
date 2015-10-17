@@ -317,7 +317,7 @@ void REACConnection::timerFired(OSObject *target, IOTimerEventSource *sender) {
             IOLog("REACConnection::timerFired(): Lost the time by %lld us\n", diff/1000);
         }
     } while (diff < 0);
-    sender->setTimeout(diff);
+    sender->setTimeout((UInt64)diff);
 }
 
 IOReturn REACConnection::getAndSendSamples() {
